@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MLator</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+ <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+  <a class="navbar-brand brand text-white" >MLator</a>
+
+
+ <div class="navbar-nav ml-auto">
+
+      <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+ <a class="nav-link"  href="#carouselExampleControls" role="button" data-slide="next" data-spy="affix" data-offset-top="501" data-offset-bottom="">
+    <button type="button" id="sidebarCollapse" class="navbar-btn sticky  active" style="display: table-cell;">
+<i class="fas fa-cog"></i>
+    </button>
+  </a></li>
+
+      </ul>
+  </div>
+
+</nav>
+
+ <div class="wrapper">
+
+        <nav id="sidebar" class="bg-dark h-100">
+            <!-- Sidebar Header -->
+
+            <!-- Sidebar Links -->
+                <a href="#" class="nav-link" style="color:white">My Account</a>
+                <a href="#" class="nav-link" style="color:white">My Subscription</a>
+                <a href="#" class="nav-link " style="color:white">New Translation</a>
+                <a href="#" class="nav-link " style="color:white">My Projects</a>
+        </nav>
+
+        <div id="content">
+
+
+                    <iframe class="d-block w-100 bg-dark" style="height:100vh" src="{{&quot;/Images/&quot;+project_name+&quot;.html&quot;}}"></iframe>
+
+
+</div>
+</div>
+
+<script>
+$(document).ready(function () {
+    $('#sidebarCollapse').on('click', function () {
+        $('#buttone0').toggleClass('active');
+
+        $('#sidebar').toggleClass('active');
+        $(this).toggleClass('active');
+    });
+});</script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>MLator</title>
+</head>
+<body>
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+  <a class="navbar-brand brand text-white" >MLator</a>
+
+
+ <div class="navbar-nav ml-auto">
+      <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+      <a class="nav-link" data-toggle="modal" data-target="#registerModal">Register</a>
+</li>
+<li class="nav-item">
+      <a class="nav-link font-weight-bold" data-toggle="modal" data-target="#logInModal">Log In</a>
+</li>
+      </ul>
+  </div>
+
+</nav>
+
+  <!-- Log In Modal -->
+  <div class="modal fade" id="logInModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h1 class="modal-title">Log In</h1>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            <div w3-include-html="log_in.html"></div>
+        </div>
+
+
+      </div>
+      </div>
+    </div>
+<!-- Register Modal -->
+  <div class="modal fade" id="registerModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h1 class="modal-title">Register</h1>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+                        <div w3-include-html="register.html"></div>
+
+        </div>
+
+
+      </div>
+      </div>
+    </div>
+<div class="jumbotron bg-secondary jumbotron-fluid">
+   <div class="container">
+<h1 class="text-center text-bold text-white">Manga Translation</h1>
+   </div>
+
+</div>
+<div class="container bg-light">
+
+</div>
+<script>
+function openForm() {
+display_block = document.getElementById("myForm").style.display == "block";
+
+if(display_block){
+document.getElementById("myForm").style.display = 'none'
+}else{
+document.getElementById("myForm").style.display = 'block'
+}
+
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /* Remove the attribute, and call this function once more: */
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /* Exit the function: */
+      return;
+    }
+  }
+}
+includeHTML();
+</script>
+</body>
+</html>

@@ -1,1 +1,1 @@
-# Product-From-Scratch-Manga-Translation
+# product-analytics-group-project-team7
