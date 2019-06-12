@@ -106,7 +106,7 @@ function resizeViewporti(i) {
 
         }
         
-            $('#book'+i).css({top: 5, left: $('.previous-button'+i).width()+1})
+            $('#book'+i).css({top: 5, right: $('.previous-button').width()+10})
 
     var magazineOffset = $('#book'+i).offset();
 
@@ -239,7 +239,7 @@ function loadApp3() {
                   
                   // The number of pages
                   
-                  pages: 4,
+                  pages: 5,
                   
                   // Events
                   
@@ -448,7 +448,7 @@ function loadApp4() {
                   
                   // The number of pages
                   
-                  pages: 4,
+                  pages: 5,
                   
                   // Events
                   
@@ -660,7 +660,7 @@ function loadApp2() {
                   
                   // The number of pages
                   
-                  pages: 4,
+                  pages: 5,
                   
                   // Events
                   
@@ -870,7 +870,7 @@ function loadApp1() {
                   
                   // The number of pages
                   
-                  pages:4,
+                  pages: 5,
                   
                   // Events
                   

@@ -1,34 +1,39 @@
-
-
 <!doctype html>
 <html lang="en">
     <head>
-<!--    Resources Loaded from Google Servers    -->
+         <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-139993877-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-139993877-1');
+    </script>
+	    
+	    <!--    Resources Loaded from Google Servers    -->
         <meta charset="UTF-8">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-            <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-                
+
+            {% include 'commonResources.html' %}
+            {{ dropzone.style('background:rgb(0,0,0,0.1);border: 2px dashed #000; margin: 10% 0% 10% 20%; min-height: 400px; width: 80%;padding:0 important!;z-index:0') }}
+                    
+                <script type="text/javascript"  src="{{ url_for('static', filename='css/dropzone.css') }}"></script>
+                    
                 <script type="text/javascript"  src="{{ url_for('static', filename='js/jquery.min.1.7.js') }}"></script>
                 <script type="text/javascript"  src="{{ url_for('static', filename='js/turn.html4.min.js') }}"></script>
                 <script  type="text/javascript" src="{{ url_for('static', filename='js/modernizr.2.5.3.min.js')}}"></script>
                 <script type="text/javascript"  src="{{ url_for('static', filename='js/hash.js') }}"></script>
 
-                
-                <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-                <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
                 <title>MLator</title>
-                </head>
+        <link rel="stylesheet" href="../static/css/style.css">
+    </head>
     <body>
-        
         
 <!--     Navbar for homepage, responds to whether user is logged in   -->
         <nav id='navbar' class="navbar navbar-expand-md navbar-dark navbar-expand-sm sticky-top">
-            <a id='brand' class="navbar-brand brand title1 text-white" >MLator</a>
-  
+            <a class="navbar-brand" id='brand' href="#">
+                <img style='height:40px' src="{{ url_for('static', filename='images/brand.jpg') }}" alt="">
+                    </a>
                         {% if (current_user.is_authenticated) %}
                         <div class="navbar-nav ml-auto">
                             <ul id="main-list" class="navbar-nav mr-auto">
@@ -67,7 +72,7 @@
                     <!-- Modal Header -->
                     <div class="modal-header">
                         <h1 class="modal-title">Log In</h1>
-                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <button type="button" class="close" style="color:#ff9900;" data-dismiss="modal">×</button>
                     </div>
                     
                     <!-- Modal body -->
@@ -90,7 +95,7 @@
                     <!-- Modal Header -->
                     <div class="modal-header">
                         <h1 class="modal-title">Register</h1>
-                        <button type="button" class="close" data-dismiss="modal">×</button>
+                        <button type="button" class="close " style="color:#ff9900;" data-dismiss="modal">×</button>
                     </div>
                     
                     <!-- Modal body -->
@@ -110,98 +115,196 @@
     <div class="position-relative overflow-hidden p-3 p-md-5 vertical-center blue-tint">
         <div class="opaque"></div>
         <div class="col-md-8 p-lg-8 mx-auto my-5">
-            <h1 class="title2 ">Manga Translator</h1>
-            <p class="lead font-weight-normal bright-text">Machine Learning Meets Mangas</p>
+            <h1 class="title1 ">Manga Translator</h1>
+            <p class="lead font-weight-normal bright-text">When AI Meets Mangas...</p>
 
-            <a class="btn btn-outline-warning  orange-btn" href="{{ url_for('about') }}">Learn More</a>
+
         </div>
         <div class="product-device box-shadow d-none d-md-block"></div>
         <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+        
+</div>        
+
+        <div class="row"  style="padding-bottom:0">
+            
+            <center> <h1 style='padding-top:4vh;padding-bottom:2vh' class="text-center ">- PROCESS -</h1></center></div>
+<div class="container">  
+            <div class="row " style="height:100%;padding-top:2vh;padding-bottom:0">
+                <div class="col-xs-12  col-sm-3 ">
+                    
+                    <div class="card fader">
+                        <div class='container'>
+
+                            <center>  <img class="card-img-top" src="{{ url_for('static', filename='images/chat.jpg') }}" style='width:50%' alt=""> </center>
+                            </div>
+
+<div class="card-body sunrise-card" style="padding-bottom:0">
+                       <div class='container'>
+
+                        <div class='container'>
+                               <h2 class="card-text icon_title" style="padding-bottom:0;">Detection</h2>
+
+                            </div>
+                            </div>   
+</div>
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class="col-xs-12  col-sm-3 ">
+   
+   
+                    <div class=" fader">
+                        <div class="card">
+                         <div class="container">
+
+                            <center>  <img class="card-img-top" src="/static/images/eye-scan.jpg" style="width:50%" alt=""> </center>
+                            </div>
+
+                            <div class="card-body"  style="padding-bottom:0">
+                        <div class='container'>
+                             <h2 class="card-text icon_title" style="padding-bottom:0;">OCR</h2>
+
+                            </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class="col-xs-12 col-sm-3 ">
+                    
+                    <div class="card fader">
+                        <div class='container'>
+
+
+                            <center>  <img class="card-img-top" src="{{ url_for('static', filename='images/translator.jpg') }}" style='width:50%' alt=""> </center>
+                            </div>
+
+                            <div class="card-body">
+                                
+                                <h2 class="card-text  icon_title" style="padding-bottom:0;">Translation</h2>
+                                
+                            </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="col-xs-12 col-sm-3 ">
+                    
+                    <div class="card fader">
+                        <div class='container'>
+                            <center>  <img class="card-img-top" src="{{ url_for('static', filename='images/review.jpg') }}" style='width:50%' alt=""> </center>
+                            </div>
+
+                        <div  style="padding-bottom:0" class="card-body">
+                            
+                         <h2 class="card-text icon_title" style="padding-bottom:0;">Placement</h2>
+                            
+                        </div>
+                            </div>
+                    
+                    
+                </div>
+</div>                
+                
+        </div>
+        
+        
+    </div>
+    </div>
+    
+
+        
+        
     </div>
     <div class="light-grey">
+        
+ 
+        <div class="container sunrise bright-text">
+
+            <div class="row justify-content-md-center align-items-center " style="height:100%;padding-top:4vh;padding-bottom:5vh">
+                <div class="col-xs-12  ">
+
+                    <div class="container">
+                        <div class="card fadein" style="width: 100%; display: flex;
+                            align-items: center;">
+                            <div class="card-body" style="padding-top:0">
+<h1 class=" orange text-center" style="font-size:2.5rem;">- MODELS -</h1>
+                                <p class="card-text text-center" >Our AI-powered software makes it easy to get the translations you need. When logged in, you can upload a pdf,
+                                image, or folder of images. Wait a few seconds and a download link will
+                                appear. Now you're ready to enjoy your translated comics!</p>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div></div>
+        
         <div class="container">
 
-    <div class="row justify-content-md-center align-items-center " style="height:100%;padding-top:2vh;padding-bottom:2vh">
+    <div class="row justify-content-md-center align-items-center " style="height:100%;padding-top:0;padding-bottom:2vh">
             <div class="col-xs-12 order-xs-first order-md-first col-md-6 ">
                 
                 <div class="container">
                 <div class="card fader" style="width: 100%; display: flex;
                     align-items: center;">
                     <div class="card-body">
-                        <h3 class="card-title orange " style="font-size:2rem;">Finding Text</h3>
-                        <p class="card-text text-white">Our model first selects where the text is on a page.</p>
+                        <h3 class="card-title orange " style="font-size:2.0rem;">Bubble Detection</h3>
+                        <p class="card-text text-white">After you upload a comic, our first task is to detect the locations
+                        of all the text.</p>
                         <div class=text-spacer ></div>
-                        <p class="card-text  text-white">Robust to the critical failures, our algorithm does not rely on harsh decision boundaries.</p>
-                        <div class=text-spacer ></div>
+                        <p class="card-text  text-white">The identified areas are marked with bounding boxes,
+                        which let us know what parts of the image to focus on.</p>
 
-                        <p class="card-text text-white">These boxes extract the text from the page.</p>
+
                     </div>
                 </div>
                 </div>
                         
                 
                 </div>
-            <div id='book_1_container'  class="col-xs-12 order-xs-last order-md-last col-md-6 " >
+            {% include 'Books1.html' %}
+          
 
-                <div id="canvas1">
-                    
-                    <div class="magazine-viewport magazine-viewport-right">
-                        <div class="container">
-                            <div id="book1" class="magazine" >
-                                <!-- Next button -->
-                                <div ignore="1" class="next-button1"></div>
-                                <!-- Previous button -->
-                                <div ignore="1" class="previous-button1"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-            
-                    
-            </div>
 
     </div></div>
     <div class="container">
 
     <div class="row justify-content-md-center align-items-center" style="height:100%;padding-top:2vh;padding-bottom:2vh">
-            <div id='book_2_container' class="col-xs-12 col-md-6 order-xs-last order-sm-last order-md-first" >
-                <div id="canvas2">
-                    
-                    
-                    <div class="magazine-viewport magazine-viewport-left" >
-                        <div class="container" >
-                            <div id="book2" class="magazine">
-                                <!-- Next button -->
-                                <div ignore="1" class="next-button2"></div>
-                                <!-- Previous button -->
-                                <div ignore="1" class="previous-button2"></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    
-                </div>
-            </div>
+        {% include 'Books2.html' %}
+
             <div class="col-xs-12 order-xs-first order-sm-first order-md-last col-md-6 " >
                 <div>
                     <div class="container">
                     <div class="card fader" style="width: 100%; display: flex;
                         align-items: center;">
                     <div class="card-body ">
-                        <h3 class="card-title orange overflow-hidden"  style="font-size:2rem;">Finding Text</h3>
-                        <p class="card-text text-white">Our model first selects where the text is on a page.</p>
+                        <h3 class="card-title orange overflow-hidden"  style="font-size:1.0rem;">Optical Character Recognition</h3>
+                        <p class="card-text text-white">Next we use a state-of-the-art OCR engine to parse the image segment we
+                        identified in step 1 into machine-readable text.</p>
                         <div class=text-spacer ></div>
 
-                        <p class="card-text text-white">Robust to the critical failure of traditional computer science approaches, as our algorithm does not rely on harsh decision boundaries.</p>
+                        <p class="card-text text-white">We also apply a few
+                        special tricks to help the model parse vertically-oriented Japanese text
+                        and stylized comic fonts.</p>
                     </div>
                     </div>
                 </div></div>
             </div>
           
     </div></div>
-    <div class="container">
+    <section class="container">
     <div class="row justify-content-md-center align-items-center" style="height:100%;padding-top:2vh;padding-bottom:2vh">
 <!--   padding     -->
 
@@ -210,96 +313,107 @@
                 <div class="card fader" style="width: 100%; display: flex;
                     align-items: center;">
                     <div class="card-body ">
-                        <h3 class="card-title orange overflow-hidden"  style="font-size:2rem;">Finding Text</h3>
-                        <p class="card-text text-white">Our model first selects where the text is on a page.</p>
+                        <h3 class="card-title orange overflow-hidden"  style="font-size:1.0em;">Translation</h3>
+                        <p class="card-text text-white">All the extracted Japanese text is translated to English.</p>
                         <div class=text-spacer ></div>
                         
-                        <p class="card-text text-white">Robust to the critical failure of traditional computer science approaches, as our algorithm does not rely on harsh decision boundaries.</p>
+                        <p class="card-text text-white">This is a
+                        crucial stage in the process, since a quality translation is what
+                        allows readers to enjoy the results.</p>
                     </div>
                 </div></div>
             </div>
         </div>
         <!--   padding     -->
-        <div id='book_3_container' class="col-xs-12 order-xs-last order-md-last col-md-6  " >
-            
-            <div id="canvas3">
-                
-                
-                <div class="magazine-viewport magazine-viewport-right" >
-                    <div class="container" >
-                        <div id="book3" class="magazine">
-                            <!-- Next button -->
-                            <div ignore="1" class="next-button3"></div>
-                            <!-- Previous button -->
-                            <div ignore="1" class="previous-button3"></div>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                
-                
-                
-            </div>
-        </div>
+        {% include 'Books3.html' %}
 
-        </div>
     </div>
     <div class="container">
 
-    <div class="row justify-content-md-center align-items-center" style="height:100%;padding-top:2vh;padding-bottom:2vh">
-        <div id='book_4_container' class="col-xs-12 order-sm-last col-md-6 order-xs-last order-md-first" >
-            <div id="canvas4">
-                
-                
-                <div class="magazine-viewport magazine-viewport-left">
-                    <div class="container">
-                        <div id="book4" class="magazine">
-                            <!-- Next button -->
-                            <div ignore="1" class="next-button4"></div>
-                            <!-- Previous button -->
-                            <div ignore="1" class="previous-button4"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
+    <div class="row justify-content-md-center align-items-center" style="height:100%;padding-top:2vh;padding-bottom:10vh">
+        {% include 'Books4.html' %}
+
         <div class="col-xs-12 order-xs-first order-sm-first order-md-last col-md-6  " >
             <div><div class="container">
                 <div class="card fader" style="width: 100%; display: flex;
                     align-items: center;">
                     <div class="card-body ">
-                        <h3 class="card-title orange overflow-hidden"  style="font-size:2rem;">Finding Text</h3>
-                        <p class="card-text text-white">Our model first selects where the text is on a page.</p>
+                        <h3 class="card-title orange overflow-hidden"  style="font-size:1.0rem;">Text Placement</h3>
+                        <p class="card-text text-white">Finally, we reconstruct the comics using the translated text. The English
+                        text is broken up into lines of an appropriate length and resized to
+                        comfortably fit their corresponding speech bubble.</p>
                         <div class=text-spacer ></div>
                         
-                        <p class="card-text text-white">Robust to the critical failure of traditional computer science approaches, as our algorithm does not rely on harsh decision boundaries.</p>
+                        <p class="card-text text-white">We don't want text to
+                        leak beyond the bounds of the bubble. At this point, the comics are translated and ready for reading!</p>
                     </div>
                 </div>
             </div></div>
         </div>
         
     </div>
-    </div></div>
+    </div></section>
+    <section class='light-yellow'>
+        </br>
+        <h2 class="text-center bright-text" style="font-size:2.5rem;">- D E M O -</h2>
+        <div class="row justify-content-md-center align-items-center " style="height:100%;padding-top:2vh;padding-bottom:2vh">
+            
+
+            <div class=" col-5 " style='  flex: 1;'>
+            {{ dropzone.csrf_token }} <!--  render the form's CSRF field like normal. -->
+            
+            {{ dropzone.create(action=url_for('upload_demo')) }}
+            {{ dropzone.load_js() }}
+{{ dropzone.config(default_message="UPLOAD YOU IMAGE HERE~",custom_init='this.on("success",function(x,y){$("#output").attr("src",String(y))});',custom_options='addRemoveLinks: true,autoDiscover:true,thumbnailWidth:null,thumbnailHeight:null,thumbnailMethod:"contain",max_files:1,upload_on_click:false')}}
+
+            </div>
+            <div class=" col-1 " style="min-width:0px important!">
+                              <span style="font-size: 10em; color: black;padding-left:45%;">
+                    <i class="fas fa-angle-right"></i>
+                </span>
+                </div>
+            <div class="col-5 " style='  flex: 1;'>
+ <div class="container">
+  <div style=" transform: translate(35%, 225%);position:absolute;z-index:0">HERE IS THE
+RESULT~</div>
+</div>                            <img id='output' style="z-index:0;position:relative;outline:none important!;"></img>
+                 
+            </div>
+            
+            
+            
+        </div>
+    </section>
         <script>
             $(window).resize(function() {
                              x();
                              change();
+ var y = document.getElementsByClassName("tokem");
+   var i;
+for (i = 0; i < y.length; i++) {
+  y[i].style.width =  y[i].setScaledFont(0.35)
+} 
                              }).bind('orientationchange', function() {
-                                     
+                                         document.body.setScaledFont(0.35);
                                      x();
                                      change();
                                      });
-                                     
+             $(document).ready(function() {scroller();
+                               });
              var change = function(){
                  x();
                  for(var i=1; i <5;  i++){resizeViewporti(i);}
+
+
+
                  
              };
         var x = function(){
             if($( window ).width() < 1000){$('.text-spacer').css('height',0)
             }else{
-                $('.text-spacer').css('height','20%')}
+                $('.text-spacer').css('height','2.5%')}
         };
             
             var build = function(){
@@ -320,6 +434,7 @@
                 
                 // Setup callback
                 form.onload = function() {
+
                     if ( callback && typeof( callback ) === 'function' ) {
                         callback( this.responseXML );
                     }
@@ -332,11 +447,9 @@
                 
             };
 
-       
-       
-
-        
-        function openForm() {
+        var spin = function(){$("#icon").html('<div id="icon" class="spinner-border text-secondary" role="status"><span class="sr-only">Loading...</span></div>');}
+        var notspin = function(){$("#icon").html('<span style="font-size: 10em; color: black;padding-left:50%;"><i class="fas fa-angle-right"></i></span>');};
+function openForm() {
             display_block = document.getElementById("myForm").style.display == "block";
             
             if(display_block){
@@ -379,6 +492,9 @@
 
                          });
 
+
+
+
          $('#register').submit(function (e) {
             $.ajax({
                    type: $(this).attr('method'),
@@ -410,14 +526,45 @@
                 e.preventDefault();
 
         });
-        
-                         
+        $('#register').submit(function (e) {
+                              $.ajax({
+                                     type: $(this).attr('method'),
+                                     url: $(this).attr('action'), // url to post to, from the forms action
+                                     data: $(this).serialize(),
+                                     async: false,
+                                     dataType: 'json',
+                                     success: function (response) {
+                                     if(response['data']['messages']!=false){
+                                     var html = '';
+                                     for (i = 0; i < response['data']['messages'].length; i++) {
+                                     html += "<div class='alert alert-danger' role='alert'>"+response['data']['messages'][i]+"</div>";
+                                     }
+                                     
+                                     $('#registerErrors').html(html);
+                                     } else{
+                                     html = "<div class='alert alert-success' role='alert'>Successfully Registered</div>";
+                                     $('#registerErrors').html(html);
+                                     window.location.assign(window.location.href.split("home")[0] + 'user/'+$('#userRegister').val());
+                                     }
+                                     
+                                     },
+                                     cache: false,
+                                     error: function (result) {
+                                     alert("Sorry Something has gone wrong.");
+                                     }
+                                     
+                                     });
+                              e.preventDefault();
+                              
+                              });
+                             var csrf_token = "{{ csrf_token() }}";
          // Inject our CSRF token into our AJAX request.
          $.ajaxSetup({
                      beforeSend: function (xhr, settings) {
                  if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
                  xhr.setRequestHeader("X-CSRFToken", "{{ registerForm.csrf_token._value() }}")
-                 xhr.setRequestHeader("X-CSRFToken", "{{ loginForm.csrf_token._value() }}")
+                     xhr.setRequestHeader("X-CSRFToken", "{{ loginForm.csrf_token._value() }}")
+                xhr.setRequestHeader("X-CSRFToken", csrf_token);
                  }
                  }
                      });
@@ -442,12 +589,18 @@
               }
               document.getElementById("brand").style.fontSize = "50px";
           }
-          
+document.body.setScaledFont = function(f) {
+  var s = this.offsetWidth, fs = s * f;
+alert(fs);
+  this.style.fontSize = fs + '%';
+  return this
+};          
           $('.fader').each(function(){
                              var screenTop = $(this).offset().top;
                              var windowTop = $(window).scrollTop() + $(window).height();
 
                              if (screenTop < windowTop+50) {
+                           $(this).removeClass("fader")
                              $(this).addClass("fadein");
                            $(this).removeClass("fadeout")
                              }
@@ -461,5 +614,62 @@
                 complete: build
                 });
             </script>
+        <style>
+.dropzone{
+padding:0 important!
+}
+.dropzone .dz-preview:hover .dz-image img {
+border-radius: 20px;
+  -webkit-transform: scale(1.0, 1.0);
+  -moz-transform: scale(1.0, 1.0);
+  -ms-transform: scale(1.0, 1.0);
+  -o-transform: scale(1.0, 1.0);
+  transform: scale(1.0, 1.0);
+  -webkit-filter: blur(0px);
+  filter: blur(0px); }
+
+            .dz-image img{
+                width:100%;
+                height:100%;
+            }
+        .dz-preview {
+            width:100%;
+margin:0 !important;
+        }
+        .dropzone .dz-preview .dz-image{
+z-index: 0;
+
+position: relative;
+            width:auto;
+            height:auto;
+border-radius:0 important!;
+z-index:0 important!;
+
+        }
+        #output{
+                background: #0000002a;
+                border: 2px dashed #000;
+                margin: 10% 10%;
+                height:100%;
+min-height: 400px;
+                width: 80%;
+        }
+.dz-progress{
+opacity:0!important
+}
+.dz-message{
+	position: absolute;
+	padding: 20px;
+z-index:0;
+}
+.dz-filename,.dz-success-mark,.dz-error-mark,.dz-size{
+visibility:hidden;
+height:0;
+}
+.icon_title{
+  text-align: center;
+  font-size: 25.5vw;
+}        </style>
     </body>
 </html>
+

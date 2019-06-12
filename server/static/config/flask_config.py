@@ -1,4 +1,5 @@
 import os
+
 # get database info from file (dont hardcode!)
 db_name = 'mlator'
 
@@ -15,25 +16,30 @@ def getDBConString(db_name):
                 db['instance'] = db_info[3]
                 break
 
-    return 'postgresql+psycopg2://{}:{}@{}/{}'\
+    return 'postgresql+psycopg2://{}:{}@{}/{}' \
         .format(db['username'], db['password'], db['endpoint'], db['instance'])
 
 
 class Config(object):
-    # Datbase Options
+    FLASK_APP = 'MLATOR'
+    SECRET_KEY = 'supes secret'
+    # Database Options
     DATABASE_URL = getDBConString(db_name)
     SQLALCHEMY_DATABASE_URI = getDBConString(db_name)
     SQLALCHEMY_TRACK_MODIFICATIONS = True
     SEND_FILE_MAX_AGE_DEFAULT = 0
     # Options related to file upload
-    DROPZONE_UPLOAD_MULTIPLE = True
-    DROPZONE_ALLOWED_FILE_CUSTOM = True
-    DROPZONE_ALLOWED_FILE_TYPE = 'image/*'
     DROPZONE_ENABLE_CSRF = True
-    DROPZONE_MAX_FILES = 30
-    DROPZONE_REDIRECT_VIEW = 'upload'
+    DROPZONE_UPLOAD_ACTION = 'upload'  # URL or endpoint
+    DROPZONE_ALLOWED_FILE_TYPE = 'image'
     DROPZONE_MAX_FILE_SIZE = 3
-    UPLOADED_PHOTOS_DEST=os.getcwd()
+    DROPZONE_MAX_FILES = 20
+    DROPZONE_UPLOAD_MULTIPLE = True
+    DROPZONE_PARALLEL_UPLOADS=3 # set parallel amount
+
+    PATH = 'product-analytics-group7/server/static/stored/'
+    UPLOADED_PATH = os.path.join(os.getcwd(), PATH)
+    UPLOADED_PHOTOS_DEST = os.path.join(os.getcwd(), PATH)
     # Options Related to Flask Bootstrap
     BOOTSTRAP_USE_MINIFIED = True
     BOOTSTRAP_SERVE_LOCAL = False

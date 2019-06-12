@@ -1,15 +1,16 @@
+
 body{
     line-height:1.8em;
 }
 .orange{color:#ff9900}
-.card-text{font-family:'Comic Sans MS';font-size:1rem;}
+
 .card{
     background-color:transparent;
-    border:0px solid rgba(0,0,0,.125)
+    border:0px solid #1D1D1D;
 }
 #navbar {
     overflow: hidden;
-    background-color: #131A22;
+    background-color: #1D1D1D;
 }
 html {
     box-sizing: border-box;
@@ -18,12 +19,17 @@ html {
 *, *:before, *:after {
     box-sizing: inherit;
 }
-
+.card-title{
+    font-size:2em !important;
+}
+.card-text{
+    font-size:1.5em !important;
+}
 #navbar {
     overflow: hidden;
-    background-color: rgba(52, 58, 64, 1);
+    background-color: #1D1D1D;
     padding: 10px 10px; /* Large padding which will shrink on scroll (using JS) */
-    transition: 0.2s; /* Adds a transition effect when the padding is decreased */
+    transition: 0.5s; /* Adds a transition effect when the padding is decreased */
     position: fixed; /* Sticky/fixed navbar */
     width: 100%;
     top: 0; /* At the top */
@@ -43,16 +49,24 @@ html {
 
 .blue-tint{background:#375e6b}
 .light-grey{background:#131A22}
+.light-yellow{
+    background: -webkit-linear-gradient(to bottom, #ff9900 25%, #FEFFB1  100%);
+    background: -o-linear-gradient(bottom, #ff9900 25%, #FEFFB1 100%);
+    background: -moz-linear-gradient(bottom, #ff9900 25%, #FEFFB1 100%);
+    background: linear-gradient(to bottom, #ff9900 25%, #FEFFB1 100%);
+    
+}
 .red-title{color:red;}
-.orange-btn{color: #ff9900;
-    background-color: transparent;
-    background-image: none;
-    border-color: #ff9900;
+.orange-btn{
 
 }
 .orange-btn:hover{color: #000;
+    transition-duration:0.1s;
     background: #ff9900;
     border-color: black;
+    
+
+    
 }
 .col-8,.col-4,.col-1,.col-2{
     padding-right:0 !important;
@@ -63,7 +77,7 @@ li.nav-item{
     color:#ffc107!important;
 }
 li.nav-item a{
-    color: #FFFFFF !important;
+    color: #ff9900 !important;
     text-align: center;
     padding: 10px;
     float: left;
@@ -72,7 +86,24 @@ li.nav-item a{
     font-size: 18px;
     line-height: 25px;
     border-radius: 4px;
-    
+    background-color: transparent;
+    background-image: none;
+    border-color: #ff9900;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 li.nav-item :hover{
     color:#ff9900!important;
@@ -91,12 +122,32 @@ li.nav-item :hover{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-    background-image: url('/pages/1/regular/home');
-    opacity:0.9;
+    background-image: url('/pages/1/regular/home1');
+    opacity:0.8;
     display: flex;
     align-items: center;
 }
+.modal-content{
+    background-color:#1D1D1D;
+    color:#ff9900;
+}
+.modal-content input{
+    background-color:#1D1D1D;
+    color:#fff;
+}
+.modal-content input:focus{
+    background-color:grey;
+    color:#fff;
 
+}
+
+.modal-content input:webkit-autofill{
+    background-color:grey;
+    color:#ff9900;
+}
+.modal-content .modal-header{
+    color:white;
+}
 .title2{
     font-size: 70px;
     font-weight: bold;
@@ -128,13 +179,16 @@ li.nav-item :hover{
 /* Style the logo */
 #navbar #brand {
 	font-size: 50px;
-	font-style: italic;
 	text-transform: uppercase;
     font-weight: bold;
     transition: 0.4s;
 }
 #navbar #brand::first-letter {
-    color: red;
+    background: #ff9900;
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
 }
 
 /* Links on mouse-over */
@@ -158,11 +212,8 @@ li.nav-item :hover{
     flex-wrap: wrap;
     width: 100%;
     min-width: 500px;
-    padding: 0px;
     justify-content: center;
 }
-
-
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9,
 .col-10, .col-11, .col-12 {
@@ -171,6 +222,13 @@ li.nav-item :hover{
 
 .margin-top {
 	margin-top: 100px;
+}
+
+.about-img {
+	/*height: 300px;*/
+	max-width: 100%;
+	float: left;
+	margin: 0px 10px;
 }
 
 footer {
@@ -189,6 +247,17 @@ footer {
 footer li {
 	display: inline;
 	padding: 25px;
+}
+
+ol li {
+	font-size: 20px;
+	padding: 15px;
+}
+
+.about-wrapper {
+	display: inline-block;
+	min-height: 200px;
+	margin: 60px 0px;
 }
 
 ul.account-info-list {
@@ -256,8 +325,6 @@ table.account-info-table {
     margin-top:0% !important;
     overflow:visible !important;
 }
-
-
 
 @-webkit-keyframes fadein {
     0% {
@@ -925,6 +992,152 @@ background-color: rgba(0, 0, 0, .85);
     }
 /*  make columns align  */
 
-.row {
-    margin-right:0
+.row {padding-right:20px;
+}
+
+.dropzone{    
+}
+      header, footer,
+      article, aside {
+        border: 1px solid black;
+        padding: 0.25em;
+        margin: 0.25em;
+        border-radius: 0.25em;
+      }
+
+      /*
+        Force full width & height.
+
+        If this block is removed, the layout height/length will be determined by
+        the amount of content in the page. That might result in a page which has
+        a footer only a few inches from the top of the viewport, or one which
+        scrolls beyond the viewport.
+
+        This forces the layout to always be full screen regardless of how much,
+        or how little, content is in place. Neither is "right" or "wrong", there
+        are valid cases for each. I just want to be clear what's controlling the
+        page/viewport height.
+      */
+      html, body, .viewport {
+        width: 100% important!;
+        height: 100% important!;
+        margin: 0 important!;
+      }
+
+      /* encapsulate the various syntax in helper clases */
+      /* inspired by http://infrequently.org/2009/08/css-3-progress/ */
+
+      /* items flex/expand vertically */
+      .vbox {
+        /* previous syntax */
+        display: -webkit-box;
+        display:    -moz-box;
+        display:         box;
+
+        -webkit-box-orient: vertical;
+           -moz-box-orient: vertical;
+            -ms-box-orient: vertical;
+                box-orient: vertical;
+
+        /* current syntax */
+        display: -webkit-flex;
+        display:    -moz-flex;
+        display:     -ms-flex;
+        display:         flex;
+
+        -webkit-flex-direction: column;
+           -moz-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+      }
+
+      /* items flex/expand horizontally */
+      .hbox {
+        /* previous syntax */
+        display: -webkit-box;
+        display:    -moz-box;
+        display:     -ms-box;
+        display:         box;
+
+        -webkit-box-orient: horizontal;
+           -moz-box-orient: horizontal;
+            -ms-box-orient: horizontal;
+                box-orient: horizontal;
+
+        /* current syntax */
+        display: -webkit-flex;
+        display:    -moz-flex;
+        display:     -ms-flex;
+        display:         flex;
+
+        -webkit-flex-direction: row;
+           -moz-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+      }
+
+      .space-between {
+        /* previous syntax */
+        -webkit-box-pack: justify;
+           -moz-box-pack: justify;
+            -ms-box-pack: justify;
+                box-pack: justify;
+
+        /* current syntax */
+        -webkit-justify-content: space-between;
+           -moz-justify-content: space-between;
+            -ms-justify-content: space-between;
+                justify-content: space-between;
+      }
+
+      /* I went with a fixed height header & footer because it's a common case.
+        This could easily be altered to flex proportionally with the page.
+      */
+      header, footer {
+        height: 100px;
+      }
+
+      .main {
+        /* previous syntax */
+        -webkit-box-flex: 1;
+           -moz-box-flex: 1;
+            -ms-box-flex: 1;
+                box-flex: 1;
+
+        /* current syntax */
+        -webkit-flex: 1;
+           -moz-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+      }
+
+      article {
+        /* previous syntax */
+        -webkit-box-flex: 5;
+           -moz-box-flex: 5;
+            -ms-box-flex: 5;
+                box-flex: 5;
+
+        /* current syntax */
+        -webkit-flex: 5;
+           -moz-flex: 5;
+            -ms-flex: 5;
+                flex: 5;
+      }
+
+      aside {
+        /* previous syntax */
+        -webkit-box-flex: 1;
+           -moz-box-flex: 1;
+            -ms-box-flex: 1;
+                box-flex: 1;
+
+        /* current syntax */
+        -webkit-flex: 1;
+           -moz-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+      }
+#output{
+z-index:0
 }
